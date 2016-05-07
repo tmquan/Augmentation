@@ -25,8 +25,9 @@ def data():
 	
 if __name__ == '__main__': 
 	train_image = img2arr(train_volume_file)
+	train_label = img2arr(train_labels_file)
 
 	# Test this image
-	img = train_image[0,:,0]
-
-	img = elastic(img)
+	image = train_image[0,:,:]
+	label = train_label[0,:,:]
+	image, label = elastic(image, label, Verbose=True)
